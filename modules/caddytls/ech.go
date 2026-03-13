@@ -137,6 +137,8 @@ func (ech *ECH) Provision(ctx caddy.Context) ([]string, error) {
 		return nil, fmt.Errorf("rotating ECH configs: %w", err)
 	}
 
+	ech.updateKeyList()
+	
 	return outerNames, nil
 }
 
